@@ -1,0 +1,7 @@
+README.md
+setup.py
+alpake/alpake.egg-info/PKG-INFO
+alpake/alpake.egg-info/SOURCES.txt
+alpake/alpake.egg-info/dependency_links.txt
+alpake/alpake.egg-info/requires.txt
+alpake/alpake.egg-info/top_level.txt

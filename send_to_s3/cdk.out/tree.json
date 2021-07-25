@@ -1,0 +1,239 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree",
+        "constructInfo": {
+          "fqn": "@aws-cdk/core.Construct",
+          "version": "1.115.0"
+        }
+      },
+      "AlpakeStack": {
+        "id": "AlpakeStack",
+        "path": "AlpakeStack",
+        "children": {
+          "alpaked-03": {
+            "id": "alpaked-03",
+            "path": "AlpakeStack/alpaked-03",
+            "children": {
+              "Notifications": {
+                "id": "Notifications",
+                "path": "AlpakeStack/alpaked-03/Notifications",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Construct",
+                  "version": "1.115.0"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "AlpakeStack/alpaked-03/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::S3::Bucket",
+                  "aws:cdk:cloudformation:props": {}
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-s3.CfnBucket",
+                  "version": "1.115.0"
+                }
+              },
+              "Policy": {
+                "id": "Policy",
+                "path": "AlpakeStack/alpaked-03/Policy",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "AlpakeStack/alpaked-03/Policy/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::S3::BucketPolicy",
+                      "aws:cdk:cloudformation:props": {
+                        "bucket": {
+                          "Ref": "alpaked0363A3DB66"
+                        },
+                        "policyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "s3:GetObject",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "CanonicalUser": {
+                                  "Fn::GetAtt": [
+                                    "myDistOrigin1S3Origin5717909C",
+                                    "S3CanonicalUserId"
+                                  ]
+                                }
+                              },
+                              "Resource": {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    {
+                                      "Fn::GetAtt": [
+                                        "alpaked0363A3DB66",
+                                        "Arn"
+                                      ]
+                                    },
+                                    "/*"
+                                  ]
+                                ]
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-s3.CfnBucketPolicy",
+                      "version": "1.115.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-s3.BucketPolicy",
+                  "version": "1.115.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/aws-s3.Bucket",
+              "version": "1.115.0"
+            }
+          },
+          "myDist": {
+            "id": "myDist",
+            "path": "AlpakeStack/myDist",
+            "children": {
+              "Origin1": {
+                "id": "Origin1",
+                "path": "AlpakeStack/myDist/Origin1",
+                "children": {
+                  "S3Origin": {
+                    "id": "S3Origin",
+                    "path": "AlpakeStack/myDist/Origin1/S3Origin",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "AlpakeStack/myDist/Origin1/S3Origin/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::CloudFront::CloudFrontOriginAccessIdentity",
+                          "aws:cdk:cloudformation:props": {
+                            "cloudFrontOriginAccessIdentityConfig": {
+                              "comment": "Identity for AlpakeStackmyDistOrigin1F5595D73"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-cloudfront.CfnCloudFrontOriginAccessIdentity",
+                          "version": "1.115.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-cloudfront.OriginAccessIdentity",
+                      "version": "1.115.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Construct",
+                  "version": "1.115.0"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "AlpakeStack/myDist/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::CloudFront::Distribution",
+                  "aws:cdk:cloudformation:props": {
+                    "distributionConfig": {
+                      "enabled": true,
+                      "origins": [
+                        {
+                          "domainName": {
+                            "Fn::GetAtt": [
+                              "alpaked0363A3DB66",
+                              "RegionalDomainName"
+                            ]
+                          },
+                          "id": "AlpakeStackmyDistOrigin1F5595D73",
+                          "s3OriginConfig": {
+                            "originAccessIdentity": {
+                              "Fn::Join": [
+                                "",
+                                [
+                                  "origin-access-identity/cloudfront/",
+                                  {
+                                    "Ref": "myDistOrigin1S3Origin5717909C"
+                                  }
+                                ]
+                              ]
+                            }
+                          }
+                        }
+                      ],
+                      "defaultCacheBehavior": {
+                        "pathPattern": "*",
+                        "targetOriginId": "AlpakeStackmyDistOrigin1F5595D73",
+                        "cachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
+                        "compress": true,
+                        "viewerProtocolPolicy": "allow-all"
+                      },
+                      "httpVersion": "http2",
+                      "ipv6Enabled": true
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-cloudfront.CfnDistribution",
+                  "version": "1.115.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/aws-cloudfront.Distribution",
+              "version": "1.115.0"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "AlpakeStack/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "AlpakeStack/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnResource",
+                  "version": "1.115.0"
+                }
+              },
+              "Condition": {
+                "id": "Condition",
+                "path": "AlpakeStack/CDKMetadata/Condition",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnCondition",
+                  "version": "1.115.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Construct",
+              "version": "1.115.0"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "@aws-cdk/core.Stack",
+          "version": "1.115.0"
+        }
+      }
+    },
+    "constructInfo": {
+      "fqn": "@aws-cdk/core.App",
+      "version": "1.115.0"
+    }
+  }
+}

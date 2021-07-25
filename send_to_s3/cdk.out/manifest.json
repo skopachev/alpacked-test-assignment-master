@@ -1,0 +1,159 @@
+{
+  "version": "13.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "AlpakeStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "AlpakeStack.template.json",
+        "validateOnSynth": false
+      },
+      "metadata": {
+        "/AlpakeStack/alpaked-03/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "alpaked0363A3DB66",
+            "trace": [
+              "new Bucket (/tmp/jsii-kernel-8Ro1Fx/node_modules/@aws-cdk/aws-s3/lib/bucket.js:573:26)",
+              "obj._wrapSandboxCode (/tmp/tmp920kk7ou/lib/program.js:8154:58)",
+              "Kernel._wrapSandboxCode (/tmp/tmp920kk7ou/lib/program.js:8582:24)",
+              "Kernel._create (/tmp/tmp920kk7ou/lib/program.js:8154:34)",
+              "Kernel.create (/tmp/tmp920kk7ou/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/tmp/tmp920kk7ou/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp920kk7ou/lib/program.js:9442:22)",
+              "Immediate.setImmediate [as _onImmediate] (/tmp/tmp920kk7ou/lib/program.js:9443:46)",
+              "runCallback (timers.js:705:18)",
+              "tryOnImmediate (timers.js:676:5)",
+              "processImmediate (timers.js:658:5)"
+            ]
+          }
+        ],
+        "/AlpakeStack/alpaked-03/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "alpaked03Policy2B08F61B",
+            "trace": [
+              "new BucketPolicy (/tmp/jsii-kernel-8Ro1Fx/node_modules/@aws-cdk/aws-s3/lib/bucket-policy.js:32:25)",
+              "Bucket.addToResourcePolicy (/tmp/jsii-kernel-8Ro1Fx/node_modules/@aws-cdk/aws-s3/lib/bucket.js:142:27)",
+              "S3BucketOrigin.bind (/tmp/jsii-kernel-8Ro1Fx/node_modules/@aws-cdk/aws-cloudfront-origins/lib/s3-origin.js:73:25)",
+              "S3Origin.bind (/tmp/jsii-kernel-8Ro1Fx/node_modules/@aws-cdk/aws-cloudfront-origins/lib/s3-origin.js:37:28)",
+              "Distribution.addOrigin (/tmp/jsii-kernel-8Ro1Fx/node_modules/@aws-cdk/aws-cloudfront/lib/distribution.js:115:45)",
+              "new Distribution (/tmp/jsii-kernel-8Ro1Fx/node_modules/@aws-cdk/aws-cloudfront/lib/distribution.js:37:31)",
+              "obj._wrapSandboxCode (/tmp/tmp920kk7ou/lib/program.js:8154:58)",
+              "Kernel._wrapSandboxCode (/tmp/tmp920kk7ou/lib/program.js:8582:24)",
+              "Kernel._create (/tmp/tmp920kk7ou/lib/program.js:8154:34)",
+              "Kernel.create (/tmp/tmp920kk7ou/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/tmp/tmp920kk7ou/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp920kk7ou/lib/program.js:9442:22)",
+              "Immediate.setImmediate [as _onImmediate] (/tmp/tmp920kk7ou/lib/program.js:9443:46)",
+              "runCallback (timers.js:705:18)",
+              "tryOnImmediate (timers.js:676:5)",
+              "processImmediate (timers.js:658:5)"
+            ]
+          }
+        ],
+        "/AlpakeStack/myDist/Origin1/S3Origin/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myDistOrigin1S3Origin5717909C",
+            "trace": [
+              "new OriginAccessIdentity (/tmp/jsii-kernel-8Ro1Fx/node_modules/@aws-cdk/aws-cloudfront/lib/origin-access-identity.js:40:25)",
+              "S3BucketOrigin.bind (/tmp/jsii-kernel-8Ro1Fx/node_modules/@aws-cdk/aws-cloudfront-origins/lib/s3-origin.js:66:41)",
+              "S3Origin.bind (/tmp/jsii-kernel-8Ro1Fx/node_modules/@aws-cdk/aws-cloudfront-origins/lib/s3-origin.js:37:28)",
+              "Distribution.addOrigin (/tmp/jsii-kernel-8Ro1Fx/node_modules/@aws-cdk/aws-cloudfront/lib/distribution.js:115:45)",
+              "new Distribution (/tmp/jsii-kernel-8Ro1Fx/node_modules/@aws-cdk/aws-cloudfront/lib/distribution.js:37:31)",
+              "obj._wrapSandboxCode (/tmp/tmp920kk7ou/lib/program.js:8154:58)",
+              "Kernel._wrapSandboxCode (/tmp/tmp920kk7ou/lib/program.js:8582:24)",
+              "Kernel._create (/tmp/tmp920kk7ou/lib/program.js:8154:34)",
+              "Kernel.create (/tmp/tmp920kk7ou/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/tmp/tmp920kk7ou/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp920kk7ou/lib/program.js:9442:22)",
+              "Immediate.setImmediate [as _onImmediate] (/tmp/tmp920kk7ou/lib/program.js:9443:46)",
+              "runCallback (timers.js:705:18)",
+              "tryOnImmediate (timers.js:676:5)",
+              "processImmediate (timers.js:658:5)"
+            ]
+          }
+        ],
+        "/AlpakeStack/myDist/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myDist9DB766F3",
+            "trace": [
+              "new Distribution (/tmp/jsii-kernel-8Ro1Fx/node_modules/@aws-cdk/aws-cloudfront/lib/distribution.js:50:30)",
+              "obj._wrapSandboxCode (/tmp/tmp920kk7ou/lib/program.js:8154:58)",
+              "Kernel._wrapSandboxCode (/tmp/tmp920kk7ou/lib/program.js:8582:24)",
+              "Kernel._create (/tmp/tmp920kk7ou/lib/program.js:8154:34)",
+              "Kernel.create (/tmp/tmp920kk7ou/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/tmp/tmp920kk7ou/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp920kk7ou/lib/program.js:9442:22)",
+              "Immediate.setImmediate [as _onImmediate] (/tmp/tmp920kk7ou/lib/program.js:9443:46)",
+              "runCallback (timers.js:705:18)",
+              "tryOnImmediate (timers.js:676:5)",
+              "processImmediate (timers.js:658:5)"
+            ]
+          }
+        ],
+        "/AlpakeStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (/tmp/jsii-kernel-8Ro1Fx/node_modules/@aws-cdk/core/lib/private/metadata-resource.js:22:30)",
+              "construct (/tmp/jsii-kernel-8Ro1Fx/node_modules/@aws-cdk/core/lib/private/synthesis.js:139:9)",
+              "visit (/tmp/jsii-kernel-8Ro1Fx/node_modules/@aws-cdk/core/lib/private/synthesis.js:200:9)",
+              "visit (/tmp/jsii-kernel-8Ro1Fx/node_modules/@aws-cdk/core/lib/private/synthesis.js:197:9)",
+              "injectMetadataResources (/tmp/jsii-kernel-8Ro1Fx/node_modules/@aws-cdk/core/lib/private/synthesis.js:128:5)",
+              "Object.synthesize (/tmp/jsii-kernel-8Ro1Fx/node_modules/@aws-cdk/core/lib/private/synthesis.js:17:5)",
+              "App.synth (/tmp/jsii-kernel-8Ro1Fx/node_modules/@aws-cdk/core/lib/stage.js:100:41)",
+              "_wrapSandboxCode (/tmp/tmp920kk7ou/lib/program.js:7970:134)",
+              "Kernel._wrapSandboxCode (/tmp/tmp920kk7ou/lib/program.js:8582:24)",
+              "ret._ensureSync (/tmp/tmp920kk7ou/lib/program.js:7970:107)",
+              "Kernel._ensureSync (/tmp/tmp920kk7ou/lib/program.js:8563:28)",
+              "Kernel.invoke (/tmp/tmp920kk7ou/lib/program.js:7970:34)",
+              "KernelHost.processRequest (/tmp/tmp920kk7ou/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp920kk7ou/lib/program.js:9442:22)",
+              "Immediate.setImmediate [as _onImmediate] (/tmp/tmp920kk7ou/lib/program.js:9443:46)",
+              "runCallback (timers.js:705:18)",
+              "tryOnImmediate (timers.js:676:5)",
+              "processImmediate (timers.js:658:5)"
+            ]
+          }
+        ],
+        "/AlpakeStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable",
+            "trace": [
+              "new MetadataResource (/tmp/jsii-kernel-8Ro1Fx/node_modules/@aws-cdk/core/lib/private/metadata-resource.js:30:35)",
+              "construct (/tmp/jsii-kernel-8Ro1Fx/node_modules/@aws-cdk/core/lib/private/synthesis.js:139:9)",
+              "visit (/tmp/jsii-kernel-8Ro1Fx/node_modules/@aws-cdk/core/lib/private/synthesis.js:200:9)",
+              "visit (/tmp/jsii-kernel-8Ro1Fx/node_modules/@aws-cdk/core/lib/private/synthesis.js:197:9)",
+              "injectMetadataResources (/tmp/jsii-kernel-8Ro1Fx/node_modules/@aws-cdk/core/lib/private/synthesis.js:128:5)",
+              "Object.synthesize (/tmp/jsii-kernel-8Ro1Fx/node_modules/@aws-cdk/core/lib/private/synthesis.js:17:5)",
+              "App.synth (/tmp/jsii-kernel-8Ro1Fx/node_modules/@aws-cdk/core/lib/stage.js:100:41)",
+              "_wrapSandboxCode (/tmp/tmp920kk7ou/lib/program.js:7970:134)",
+              "Kernel._wrapSandboxCode (/tmp/tmp920kk7ou/lib/program.js:8582:24)",
+              "ret._ensureSync (/tmp/tmp920kk7ou/lib/program.js:7970:107)",
+              "Kernel._ensureSync (/tmp/tmp920kk7ou/lib/program.js:8563:28)",
+              "Kernel.invoke (/tmp/tmp920kk7ou/lib/program.js:7970:34)",
+              "KernelHost.processRequest (/tmp/tmp920kk7ou/lib/program.js:9479:36)",
+              "KernelHost.run (/tmp/tmp920kk7ou/lib/program.js:9442:22)",
+              "Immediate.setImmediate [as _onImmediate] (/tmp/tmp920kk7ou/lib/program.js:9443:46)",
+              "runCallback (timers.js:705:18)",
+              "tryOnImmediate (timers.js:676:5)",
+              "processImmediate (timers.js:658:5)"
+            ]
+          }
+        ]
+      },
+      "displayName": "AlpakeStack"
+    }
+  }
+}
